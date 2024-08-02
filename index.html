@@ -13,6 +13,7 @@
             <input type="file" id="file" name="file" required>
             <br><br>
             <label for="targetVersion">Target Minecraft Data Version:</label>
+            <p class="small-text">Items that do not exist in lower versions will not be converted.</p>
             <select id="targetVersion" name="targetVersion" required>
                 <option value="1343">1.12</option>
                 <option value="1631">1.13</option>
@@ -28,6 +29,16 @@
             <br><br>
             <button type="submit">Convert</button>
         </form>
+    </div>
+    <button id="contactButton" class="contact-button">Help</button>
+    <div id="contactBox" class="contact-box">
+        <p>For any issues, leave detail in our Discord or Github issue page</p>
+        <a href="https://github.com/Harusarri/litemetica-converter" target="_blank">
+            <img src="github-icon.png" alt="GitHub" class="icon"> GitHub
+        </a><br>
+        <a href="https://discord.gg/TMM4Qq6sCk" target="_blank">
+            <img src="discord-icon.png" alt="Discord" class="icon"> Discord
+        </a>
     </div>
     <script src="pnbt.js"></script>
     <script src="pako.min.js"></script>

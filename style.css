@@ -47,3 +47,54 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+.contact-button {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-button:hover {
+    background-color: #45a049;
+}
+
+.contact-box {
+    position: absolute;
+    left: 10px;
+    bottom: 50px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.contact-box a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.contact-box a:hover {
+    text-decoration: underline;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.small-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}

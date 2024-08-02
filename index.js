@@ -10,7 +10,8 @@ document.getElementById("uploadForm").addEventListener("submit", (e) => {
         const data = await nbt.parse(Buffer.from(pako.inflate(buffer)));
         const nbt_data = data.parsed.value;
 
-        nbt_data.MinecraftDataVersion.value = parseInt(document.getElementById("targetVersion").value);
+        const targetVersion = parseInt(document.getElementById("targetVersion").value);
+        nbt_data.MinecraftDataVersion.value = targetVersion;
 
         if (targetVersion >= 3463) {
             nbt_data.Version.value = 7;
@@ -24,7 +25,6 @@ document.getElementById("uploadForm").addEventListener("submit", (e) => {
 
         const outputBuffer = pako.gzip(nbt.writeUncompressed(data.parsed));
 
-        // now let's download something... except js needs us to simulate click on a link :skull:
         const blob = new Blob([outputBuffer]);
         console.log(blob);
         const link = document.createElement('a');
@@ -35,3 +35,10 @@ document.getElementById("uploadForm").addEventListener("submit", (e) => {
     reader.readAsArrayBuffer(file);
 });
 
+document.getElementById("contactButton").addEventListener("click", () => {
+    const contactBox = document.getElementById("contactBox");
+    contactBox.style.display = contactBox.style.display === "none" ? "block" : "none";
+});
+
+// Initialize contact box as hidden
+document.getElementById("contactBox").style.display = "none";
