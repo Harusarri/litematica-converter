@@ -26,7 +26,7 @@ https://nodejs.org/en
 Install the dependencies:
    ```bash
    npm install
-
+```
 
 ## Usage
 - Start the server:
