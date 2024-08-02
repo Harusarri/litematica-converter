@@ -6,7 +6,7 @@
     "node-nbt": "^1.0.0",
     "prismarine-nbt": "^2.5.0"
   },
-  "name": "litemetica-converter",
+  "name": "litematica-converter",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,8 @@
   "keywords": [],
   "author": "Harusarri",
   "license": "ISC",
-  "description": ""
+  "description": "Just simple web application to convert litemetica version",
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.8"
+  }
 }
