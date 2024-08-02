@@ -8,7 +8,7 @@
 <body>
     <div class="container">
         <h1>Litematica Converter</h1>
-        <form id="uploadForm" action="/convert" method="post" enctype="multipart/form-data">
+        <form id="uploadForm">
             <label for="file">Select .litematic file:</label>
             <input type="file" id="file" name="file" required>
             <br><br>
@@ -45,5 +45,8 @@
             <button type="submit">Convert</button>
         </form>
     </div>
+    <script src="pnbt.js"></script>
+    <script src="pako.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
