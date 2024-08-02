@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Litematic Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Litematic Converter</h1>
+        <form id="uploadForm" action="/convert" method="post" enctype="multipart/form-data">
+            <label for="file">Select .litematic file:</label>
+            <input type="file" id="file" name="file" required>
+            <br><br>
+            <label for="targetVersion">Target Minecraft Data Version:</label>
+            <select id="targetVersion" name="targetVersion" required>
+                <option value="3953">1.21</option>
+                <option value="3839">1.20.6</option>
+                <option value="3837">1.20.5</option>
+                <option value="3700">1.20.4</option>
+                <option value="3578">1.20.2</option>
+                <option value="3465">1.20.1</option>
+                <option value="3463">1.20</option>
+                <option value="3337">1.19.4</option>
+                <option value="3218">1.19.3</option>
+                <option value="3120">1.19.2</option>
+                <option value="3105">1.19</option>
+                <option value="2975">1.18.2</option>
+                <option value="2865">1.18.1</option>
+                <option value="2860">1.18</option>
+                <option value="2730">1.17.1</option>
+                <option value="2724">1.17</option>
+                <option value="2586">1.16.5</option>
+                <option value="2584">1.16.4</option>
+                <option value="2580">1.16.3</option>
+                <option value="2578">1.16.2</option>
+                <option value="2567">1.16.1</option>
+                <option value="2566">1.16</option>
+                <option value="2230">1.15.2</option>
+                <option value="1952">1.14.4</option>
+                <option value="1631">1.13.2</option>
+                <option value="1343">1.12.2</option>
+            </select>
+            <br><br>
+            <button type="submit">Convert</button>
+        </form>
+    </div>
+</body>
+</html>
