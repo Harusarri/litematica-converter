@@ -14,7 +14,7 @@ document.getElementById("uploadForm").addEventListener("submit", (e) => {
         nbt_data.MinecraftDataVersion.value = targetVersion;
 
         if (targetVersion >= 3463) {
-            nbt_data.Version.value = 7;
+            nbt_data.Version.value = 6;
         } else if (targetVersion >= 3218 && targetVersion < 3463) {
             nbt_data.Version.value = 6;
         } else if (targetVersion <= 2586) {
