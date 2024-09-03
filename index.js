@@ -1,6 +1,16 @@
 const nbt = require("prismarine-nbt");
 const { Buffer } = require('buffer');
 
+// Initialize Sentry
+Sentry.init({
+    dsn: 'YOUR_SENTRY_DSN', // Replace with your actual DSN
+    integrations: [
+        new Sentry.BrowserTracing(),
+        new Sentry.Integrations.Breadcrumbs({ console: true }) // Capture console logs as Breadcrumbs
+    ],
+    tracesSampleRate: 1.0,
+});
+
 // Contact button click event listener
 document.getElementById("contactButton").addEventListener("click", () => {
     const contactBox = document.getElementById("contactBox");
@@ -177,6 +187,7 @@ document.getElementById("uploadForm").addEventListener("submit", (e) => {
             link.click(); // Click the download link
         } catch (error) {
             console.error("Error processing the file:", error);
+            Sentry.captureException(error); // Send the error to Sentry
             alert("An error occurred while processing the file. Please check the console log.");
         }
     };
