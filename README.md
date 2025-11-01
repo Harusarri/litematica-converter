@@ -10,4 +10,4 @@ This project is a simple web app to convert `.litematic` files to be compatible 
 
 ## Online converter
 
-https://masa.hisami.xyz/
+https://harusarri.github.io/litematica-converter/
