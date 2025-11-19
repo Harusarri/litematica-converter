@@ -152,11 +152,38 @@ document.getElementById("uploadForm").addEventListener("submit", (e) => {
                         convertRedstoneWireTags(obj[key]);
                     }
                 };
+                
+                // Adds 'PendingFluidTicks' value for higher version
+                // Actually litematica itself can read schematic unless it exists,
+                // but I add this for litemapy compatibility.
+
+                const addFluidTicks = (obj) => {
+                    if (typeof obj !== 'object' || obj === null) return;
+                    
+                    if (obj.Regions != null) {
+                        for (const key in obj.Regions.value) {
+                            addFluidTicks(obj.Regions.value[key].value);
+                        }
+
+                    } else {                  
+                        if (typeof obj !== 'object' || obj === null || obj.PendingFluidTicks !== undefined) return;
+                        obj["PendingFluidTicks"] = {
+                            "type": "list",
+                            "value": {
+                                "type": "end",
+                                "value": []
+                            }
+                        }
+
+                    }
+
+                }
 
                 // Call conversion functions for higher versions
                 renameCountTags(nbt_data);
                 convertSignTags(nbt_data);
                 convertRedstoneWireTags(nbt_data);
+                addFluidTicks(nbt_data);
 
             } else { // For lower versions
                 // Only update MinecraftDataVersion and Version for lower versions
